@@ -1,0 +1,10 @@
+{
+  "books": [
+    {
+      "author": "My new favourite",
+      "title": "new author",
+      "favourite": true,
+      "id": 4
+    }
+  ]
+}
