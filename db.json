@@ -1,10 +1,41 @@
 {
   "books": [
     {
-      "author": "My new favourite",
-      "title": "new author",
-      "favourite": true,
+      "id": 1,
+      "author": "Sienkiewicz",
+      "title": "W Pustyni i w Puszczy"
+    },
+    {
+      "id": 2,
+      "author": "Sienkiewicz",
+      "title": "W Pustyni i w Puszczy 2"
+    },
+    {
+      "author": "Anonim",
+      "title": "Alfabet Kaczyńskich",
       "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "author": "test",
+      "title": "test",
+      "id": 6
+    },
+    {
+      "author": "Test",
+      "title": "test",
+      "id": 7
+    },
+    {
+      "author": "Test",
+      "title": "test",
+      "id": 8
+    },
+    {
+      "author": "new author",
+      "id": 9
     }
   ]
 }

@@ -1,0 +1,7 @@
+<span>
+    {{bookToDisplay.author}} - {{bookToDisplay.title}}
+    <span ng-if="showDelete">
+    <a  href="" ng-click="deleteBook(book)">(delete)</a>
+    <a  ng-href="#/bookDetails/{{bookToDisplay.id}}">(details)</a>
+    </span>
+</span>

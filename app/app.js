@@ -1,2 +1,1 @@
-angular.module('bookstore', ['pascalprecht.translate', 'ui.bootstrap', 'ngRoute']);
-
+angular.module("bookstore",["ngRoute", "pascalprecht.translate"]);

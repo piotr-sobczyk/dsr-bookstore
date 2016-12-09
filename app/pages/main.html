@@ -1,0 +1,35 @@
+<div>
+    <div>
+        <form name="newBookForm">
+        <span>Book author</span>
+        <input name="author" required ng-model="booksCtrl.newBook.author"
+            />
+        <span>Book title</span>
+        <input name="title" required ng-model="booksCtrl.newBook.title"
+               ng-minlength="3" ng-maxlength="7"/>
+        <button ng-click="booksCtrl.addBook()">Add book</button>
+        </form>
+    </div>
+    <div>
+        <div>Filters</div>
+        <span>General</span> <input ng-model="booksCtrl.filters.general"/>
+        <span>Author</span> <input ng-model="booksCtrl.filters.author"/>
+        <span>Title</span> <input ng-model="booksCtrl.filters.title"/>
+    </div>
+    <div>
+        {{"booksList.bookListLabel" | translate}}
+        <ul>
+            <li ng-repeat="book in booksCtrl.books | filter:{$:booksCtrl.filters.general,author:booksCtrl.filters.author,title:booksCtrl.filters.title}">
+                <book-item book-to-display="book" show-delete="true" delete-book="booksCtrl.deleteBook(book)"></book-item>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <button ng-click="booksCtrl.goToFirstBook()">Go to first book</button>
+    </div>
+    <div>
+        <span>{{"booksList.lastBookAdded" | translate}}</span>
+        <book-item book-to-display="booksCtrl.getLastBook()" prefix="book"></book-item>
+
+    </div>
+</div>

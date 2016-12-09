@@ -4,8 +4,30 @@
     <meta charset="utf-8">
     <title>Bookstore App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="app.css"/>
 </head>
-<body>
+<body ng-app="bookstore" ng-cloak>
+    <div ng-controller="NavbarCtrl as navbarCtrl" >
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <button ng-click="navbarCtrl.changeLanguageToEn()">EN</button>
+        <button ng-click="navbarCtrl.changeLanguageToPl()">PL</button>
+        <span>{{"navbar.bookstoreTitle" | translate}}</span>
+    </div>
 
+    <div ng-view></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+
+    <script src="app.js"></script>
+    <script src="router.js"></script>
+    <script src="controllers/BookListCtrl.js"></script>
+    <script src="directives/bookItem.js"></script>
+    <script src="services/Books.js"></script>
+    <script src="controllers/BookDetailsCtrl.js"></script>
+    <script src="config/translations.js"></script>
+    <script src="controllers/NavbarCtrl.js"></script>
 </body>
 </html>
