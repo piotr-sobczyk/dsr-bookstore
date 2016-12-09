@@ -1,15 +1,21 @@
-angular.module("bookstore").controller("BookListCtrl", function (Books, $location,
-    $translate, $scope) {
+angular.module("bookstore").controller("BookListCtrl", function (/*$scope,*/ $timeout, Books, $location,
+    $translate) {
 
     this.newBook = {
         author: "",
-        title: ""
+        title: "",
+        pubDate: "2016-05-05"
     };
 
     this.filters = {
         general: "",
         author: "",
         titles: ""
+    };
+
+    this.open = false;
+    this.openCalendar = () => {
+        this.open = true;
     };
 
     this.goToFirstBook = () => {
@@ -21,15 +27,16 @@ angular.module("bookstore").controller("BookListCtrl", function (Books, $locatio
         this.books = result.data;
     });
 
-    this.getLastBook = () => {
-        this.books[this.books.length-1];
-    };
+    this.lastBook = {author: "test", title: "test"};
+    //$scope.$watchCollection("booksCtrl.books", (newValue, oldValue) => {
+    //    this.lastBook = newValue[newValue.length-1];
+    //});
 
     this.addBook = () => {
-        if($scope.newBookForm.$invalid){
-            alert("Incorrect data");
-            return;
-        }
+        //if($scope.newBookForm.$invalid){
+        //    alert("Incorrect data");
+        //    return;
+        //}
 
         Books.addBook(this.newBook).then(() => {
             Books.getAll().then((result) => {

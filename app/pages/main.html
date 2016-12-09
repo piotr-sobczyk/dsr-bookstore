@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <bookstore-section>
         <form name="newBookForm">
         <span>Book author</span>
         <input name="author" required ng-model="booksCtrl.newBook.author"
@@ -7,29 +7,32 @@
         <span>Book title</span>
         <input name="title" required ng-model="booksCtrl.newBook.title"
                ng-minlength="3" ng-maxlength="7"/>
+        <span>Publishing date</span>
+            <span ng-controller="DateCtrl">
+        <input name="pubDate" type="text" uib-datepicker-popup="yyyy-MM-dd" is-open="booksCtrl.open" ng-click="booksCtrl.openCalendar()" ng-model="booksCtrl.newBook.pubDate"/>
+            </span>
         <button ng-click="booksCtrl.addBook()">Add book</button>
         </form>
-    </div>
-    <div>
+    </bookstore-section>
+    <bookstore-section>
         <div>Filters</div>
         <span>General</span> <input ng-model="booksCtrl.filters.general"/>
         <span>Author</span> <input ng-model="booksCtrl.filters.author"/>
         <span>Title</span> <input ng-model="booksCtrl.filters.title"/>
-    </div>
-    <div>
+    </bookstore-section>
+    <bookstore-section>
         {{"booksList.bookListLabel" | translate}}
         <ul>
             <li ng-repeat="book in booksCtrl.books | filter:{$:booksCtrl.filters.general,author:booksCtrl.filters.author,title:booksCtrl.filters.title}">
                 <book-item book-to-display="book" show-delete="true" delete-book="booksCtrl.deleteBook(book)"></book-item>
             </li>
         </ul>
-    </div>
+    </bookstore-section>
     <div>
         <button ng-click="booksCtrl.goToFirstBook()">Go to first book</button>
     </div>
-    <div>
+    <bookstore-section>
         <span>{{"booksList.lastBookAdded" | translate}}</span>
-        <book-item book-to-display="booksCtrl.getLastBook()" prefix="book"></book-item>
-
-    </div>
+        <book-item book-to-display="booksCtrl.lastBook" prefix="book"></book-item>
+    </bookstore-section>
 </div>

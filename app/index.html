@@ -5,8 +5,11 @@
     <title>Bookstore App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="app.css"/>
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 </head>
 <body ng-app="bookstore" ng-cloak>
+    <div fit-text>DSR BOOKSTORE</div>
+
     <div ng-controller="NavbarCtrl as navbarCtrl" >
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -20,6 +23,8 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/fittext/fittext.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <script src="app.js"></script>
     <script src="router.js"></script>
@@ -29,5 +34,9 @@
     <script src="controllers/BookDetailsCtrl.js"></script>
     <script src="config/translations.js"></script>
     <script src="controllers/NavbarCtrl.js"></script>
+    <script src="directives/fittext.js"></script>
+    <script src="directives/bookstoreSection.js"></script>
+    <script src="controllers/DateCtrl.js"></script>
+    <script src="filters/bookItemFilter.js"></script>
 </body>
 </html>
